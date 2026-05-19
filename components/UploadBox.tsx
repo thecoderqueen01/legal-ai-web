@@ -47,7 +47,7 @@ export default function UploadBox() {
       formData.append("file", file);
 
       const response = await fetch(
-        "https://legal-ai-backend-1-bbmp.onrender.com",
+        "https://legal-ai-backend-1-bbmp.onrender.com/analyze",
         {
           method: "POST",
           body: formData,
