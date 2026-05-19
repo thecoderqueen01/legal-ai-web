@@ -45,13 +45,16 @@ export default function UploadBox() {
 
       const formData = new FormData();
       formData.append("file", file);
-const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/analyze`, {
-            method: "POST",
-            body: formData,
-        });
 
-        const data = await response.json();
-    
+      const response = await fetch(
+        "https://legal-ai-backend-1-bbmp.onrender.com",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const data = await response.json();
 
       if (data.success) {
         setAnalysis(data.analysis);
